@@ -1,19 +1,18 @@
 import React, {useEffect, useState} from 'react';
+import axios from "axios";
 
 const App = () => {
     const [movie, setMovie] = useState([]);
     useEffect(() => {
         const fetchMovie = async () => {
-            const url = "https://localhost:7212/api/Movie/";
-            const response = await fetch(url);
-            const data = await response.json();
-            setMovie(data);
-            // console.log(data);
+            const response = await axios.get("https://localhost:7212/api/Movie/");
+            setMovie(response.data);
+            console.log(response.data);
         }
-        fetchMovie();
+        fetchMovie().then((r => r));
     }, []);
     return (
-        <>
+        <div>
             {
                 movie.map((x) => {
                     return (
@@ -21,7 +20,14 @@ const App = () => {
                     )
                 })
             }
-        </>
+            {
+                movie.map((x => {
+                    return (
+                        <h1>{x.title}</h1>
+                    )
+                }))
+            }
+        </div>
     );
 };
 
