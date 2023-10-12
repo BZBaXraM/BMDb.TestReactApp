@@ -5,13 +5,8 @@ const MovieList = () => {
     const {data} = useFetchMovies();
 
     return (
-        <div>
-            <div className="row mb-2">
-                <h5 className="themeFontColor text-center">
-                    My Movies
-                </h5>
-            </div>
-            <table className="table table-hover">
+        <div className={'container'}>
+            <table className={"table table-hover"}>
                 <thead>
                 <tr>
                     <th>Title:</th>
