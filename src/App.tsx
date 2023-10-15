@@ -4,7 +4,7 @@ import MovieList from "./movie/MovieList";
 const App = () => {
 
     return (
-        <div className='container'>
+        <div className={"container"}>
             <MovieList/>
         </div>
     );

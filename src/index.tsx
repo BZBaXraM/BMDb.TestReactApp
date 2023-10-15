@@ -1,7 +1,7 @@
 import React, {StrictMode} from "react";
 import {createRoot} from "react-dom/client";
-import App from "./App";
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+import App from "./App";
 
 const rootContainer = document.querySelector('#root');
 
@@ -11,7 +11,6 @@ const queryClient = new QueryClient();
 
 createRoot(rootContainer).render(
     <StrictMode>
-        {/*<Button variant='primary'>Click me!</Button>*/}
         <QueryClientProvider client={queryClient}>
             <App/>
         </QueryClientProvider>

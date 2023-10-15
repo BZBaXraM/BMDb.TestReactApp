@@ -5,7 +5,12 @@ const MovieList = () => {
     const {data} = useFetchMovies();
 
     return (
-        <div className={'container'}>
+        <div>
+            <div className={"row mb-2"}>
+                <h5 className={"text-center"}>
+                    Movie List
+                </h5>
+            </div>
             <table className={"table table-hover"}>
                 <thead>
                 <tr>
